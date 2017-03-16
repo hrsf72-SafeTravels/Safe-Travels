@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Weather from './weather.jsx';
 
 const main = () => (
   <div>
@@ -11,6 +12,9 @@ const main = () => (
     </div>
     <div>
       <Link to="/login">login</Link>
+    </div>
+    <div>
+      <Weather />
     </div>
     <footer>
       Be Safe!!
