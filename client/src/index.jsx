@@ -16,15 +16,24 @@ class App extends React.Component {
     super(props);
     this.state = {
       items: [],
+      location: '',
     };
   }
 
+  changeLocationFromSearch(locationFromSearch) {
+    this.setState({
+      location: locationFromSearch,
+    });
+  }
   render() {
     return (
       <Router history={history}>
         <div>
-          <Route path="/" component={Entrance} />
-          <Route path="/main" component={main} />
+          <Route
+            path="/" component={() =>
+            (<Entrance changeLocationFromSearch={this.changeLocationFromSearch} />)}
+          />
+          <Route path="/main" component={() => (<main location={this.state.location} />)} />
           <Route path="/login" component={login} />
         </div>
       </Router>
