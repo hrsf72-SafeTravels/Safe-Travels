@@ -1,11 +1,10 @@
-import './css/calendar.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route } from 'react-router-dom';
 import $ from 'jquery';
-import Entrance from './components/entrance.jsx';
-import Main from './components/main.jsx';
-import login from './components/login.jsx';
+import Entrance from './components/Entrance';
+import Main from './components/Main';
+import Login from './components/Login';
 import createHistory from '../../node_modules/history/createBrowserHistory';
 import './css/calendar.css';
 

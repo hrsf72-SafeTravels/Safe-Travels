@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AttractionList from './AttractionList.jsx';
-import RestaurantList from './RestaurantList.jsx';
+import AttractionList from './AttractionList';
+import RestaurantList from './RestaurantList';
 
 import dummyYelpAttractionData from './../../../dummyYelpAttractionData.js';
 import dummyYelpRestaurantData from './../../../dummyYelpRestaurantData.js';
 import Weather from './weather.jsx';
+
 
 class Main extends React.Component {
   constructor(props) {
