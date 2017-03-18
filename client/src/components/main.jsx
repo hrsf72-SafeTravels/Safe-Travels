@@ -7,7 +7,6 @@ import dummyYelpAttractionData from './../../../dummyYelpAttractionData';
 import dummyYelpRestaurantData from './../../../dummyYelpRestaurantData';
 import Weather from './weather.jsx';
 
-
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -30,11 +29,7 @@ class Main extends React.Component {
       <div>
         <Link to="/login">login</Link>
       </div>
-<<<<<<< HEAD
-      <Weather location={props.location} />
-=======
       <Weather location={this.props.location} />
->>>>>>> Resolve merge conflict
       <footer>
         Be Safe!!
       </footer>
