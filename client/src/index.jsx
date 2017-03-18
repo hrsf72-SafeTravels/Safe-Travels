@@ -23,7 +23,6 @@ class App extends React.Component {
       items: [],
       location: '',
     };
-<<<<<<< HEAD
   }
 
   setLocationFromSearch(locationFromSearch) {
@@ -39,7 +38,7 @@ class App extends React.Component {
             path="/" component={() =>
             (<Entrance setLocationFromSearch={this.setLocationFromSearch.bind(this)} />)}
           />
-          <Route path="/main" component={() => (<main location={this.state.location} />)} />
+          <Route path="/main" component={() => (<Main location={this.state.location} />)} />
           <Route path="/login" component={login} />
         </div>
       </Router>
