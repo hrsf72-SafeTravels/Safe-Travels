@@ -32,6 +32,11 @@ class App extends React.Component {
     });
   }
 
+  changeLocationFromSearch(locationFromSearch) {
+    this.setState({
+      location: locationFromSearch,
+    });
+  }
   render() {
     return (
       <Router history={history}>
