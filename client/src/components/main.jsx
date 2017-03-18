@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Weather from './weather.jsx';
 
-const main = () => (
+const Main = (props) => (
   <div>
     <header>
       The main page of Safe Travel
@@ -13,13 +13,11 @@ const main = () => (
     <div>
       <Link to="/login">login</Link>
     </div>
-    <div>
-      <Weather />
-    </div>
+    <Weather location={props.location} />
     <footer>
       Be Safe!!
     </footer>
   </div>
 );
 
-export default main;
+export default Main;
