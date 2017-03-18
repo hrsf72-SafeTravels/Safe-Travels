@@ -5,6 +5,7 @@ import RestaurantList from './RestaurantList';
 
 import dummyYelpAttractionData from './../../../dummyYelpAttractionData';
 import dummyYelpRestaurantData from './../../../dummyYelpRestaurantData';
+import Weather from './weather.jsx';
 
 class Main extends React.Component {
   constructor(props) {
