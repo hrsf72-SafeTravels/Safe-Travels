@@ -28,6 +28,7 @@ class Main extends React.Component {
       <div>
         <Link to="/login">login</Link>
       </div>
+      <Weather location={this.props.location} />
       <footer>
         Be Safe!!
       </footer>
