@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Calendar from './Calendar';
 import SearchBar from './Search';
+import AirbnbCalendarWrapper from './AirbnbCalendarWrapper';
 
 class Entrance extends React.Component {
   constructor(props) {
@@ -35,7 +35,9 @@ class Entrance extends React.Component {
         <div>
           <Link to="/login">login</Link>
         </div>
-        <Calendar className="calendar" setSelectedDate={this.setSelectedDate} />
+        <div> Enter your travel date
+          <AirbnbCalendarWrapper setSelectedDate={this.setSelectedDate} />
+        </div>
       </div>
     );
   }
