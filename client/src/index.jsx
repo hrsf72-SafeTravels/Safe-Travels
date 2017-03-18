@@ -18,9 +18,11 @@ const history = createHistory();
 class App extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   attractionsResults: dummyYelpAttractionData,
+    //   restaurantsResults: dummyYelpRestaurantData,
+    // };
     this.state = {
-      // attractionsResults: dummyYelpAttractionData,
-      // restaurantsResults: dummyYelpRestaurantData,
       items: [],
       location: '',
     };
