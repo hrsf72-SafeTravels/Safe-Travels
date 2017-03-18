@@ -7,7 +7,7 @@ import dummyYelpAttractionData from './../../../dummyYelpAttractionData.js';
 import dummyYelpRestaurantData from './../../../dummyYelpRestaurantData.js';
 import Weather from './weather.jsx';
 
-const main = () => (
+const Main = (props) => (
   <div>
     <header>
       The main page of Safe Travel
@@ -18,9 +18,7 @@ const main = () => (
     <div>
       <Link to="/login">login</Link>
     </div>
-    <div>
-      <Weather />
-    </div>
+    <Weather location={props.location} />
     <footer>
       Be Safe!!
     </footer>
