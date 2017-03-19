@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AttractionList from './AttractionList.jsx';
-import RestaurantList from './RestaurantList.jsx';
 
-import dummyYelpAttractionData from './../../../dummyYelpAttractionData.js';
-import dummyYelpRestaurantData from './../../../dummyYelpRestaurantData.js';
+import AttractionList from './AttractionList';
+import RestaurantList from './RestaurantList';
+
+import dummyYelpAttractionData from './../../../dummyYelpAttractionData';
+import dummyYelpRestaurantData from './../../../dummyYelpRestaurantData';
+import Weather from './weather.jsx';
+
 
 class Main extends React.Component {
   constructor(props) {
@@ -28,6 +31,7 @@ class Main extends React.Component {
       <div>
         <Link to="/login">login</Link>
       </div>
+      <Weather location={this.props.location} />
       <footer>
         Be Safe!!
       </footer>

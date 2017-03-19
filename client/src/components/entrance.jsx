@@ -1,19 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Calendar from './calendar.jsx';
-import SearchBar from './search.jsx';
+import Calendar from './Calendar';
+import SearchBar from './Search';
 
 class Entrance extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       destination: null,
+      selectedDate: null,
     };
     this.setDestination = this.setDestination.bind(this);
+    this.setSelectedDate = this.setSelectedDate.bind(this);
   }
 
-  setDestination(string) {
-    this.setState({ destination: string });
+  setDestination(dest) {
+    this.setState({ destination: dest });
+  }
+
+  setSelectedDate(date) {
+    this.setState({ selectedDate: date });
   }
 
   render() {
@@ -22,14 +28,14 @@ class Entrance extends React.Component {
         <h1>Hello World!</h1>
         <h1>Safe Travel</h1>
         <p> want to travel safe? </p>
-        <SearchBar setDestination={this.setDestination} />
+        <SearchBar setDestination={this.setDestination} setLocationFromSearch={this.props.setLocationFromSearch} />
         <div>
           <Link to="/main">public</Link>
         </div>
         <div>
           <Link to="/login">login</Link>
         </div>
-        <Calendar className="calendar" />
+        <Calendar className="calendar" setSelectedDate={this.setSelectedDate} />
       </div>
     );
   }
