@@ -5,7 +5,6 @@ import $ from 'jquery';
 import Entrance from './components/Entrance';
 import Main from './components/Main';
 import Login from './components/Login';
-import $ from 'jquery';
 import createHistory from '../../node_modules/history/createBrowserHistory';
 import './css/calendar.css';
 
@@ -30,6 +29,7 @@ class App extends React.Component {
     this.setState({
       location: locationFromSearch.value,
     });
+  }
 
   render() {
     return (
@@ -40,7 +40,7 @@ class App extends React.Component {
             (<Entrance setLocationFromSearch={this.setLocationFromSearch.bind(this)} />)}
           />
           <Route path="/main" component={() => (<Main location={this.state.location} />)} />
-          <Route path="/login" component={login} />
+          <Route path="/login" component={Login} />
         </div>
       </Router>
     );
