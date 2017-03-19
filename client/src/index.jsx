@@ -12,26 +12,40 @@ import './css/calendar.css';
 
 const history = CreateHistory();
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   attractionsResults: dummyYelpAttractionData,
-    //   restaurantsResults: dummyYelpRestaurantData,
-    // };
+
+    this.state = {
+      // attractionsResults: dummyYelpAttractionData,
+      // restaurantsResults: dummyYelpRestaurantData,
+      items: [],
+      location: '',
+    };
+  }
+
+  setLocationFromSearch(locationFromSearch) {
+    this.setState({
+      location: locationFromSearch.value,
+    });
   }
 
   render() {
     return (
       <Router history={history}>
         <div>
-          <Route path="/" component={Entrance} />
-          <Route path="/main" component={Main} />
+          <Route
+            path="/" component={() =>
+            (<Entrance setLocationFromSearch={this.setLocationFromSearch.bind(this)} />)}
+          />
+          <Route path="/main" component={() => (<Main location={this.state.location} />)} />
           <Route path="/login" component={Login} />
         </div>
       </Router>
     );
   }
 }
+
 
 ReactDOM.render(<App />, document.getElementById('app'));
