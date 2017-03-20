@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: 'could travel safe be true', resave: true, saveUninitialized: true }));
 app.use(express.static(`${__dirname}/../client/dist`));
+<<<<<<< HEAD
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -69,6 +70,12 @@ app.get('/main', (req, res) => {
 });
 
 app.get('/*', (req, res) => {
+=======
+app.get('/main', (req, res) => {
+  res.redirect('/');
+});
+app.get('/login', (req, res) => {
+>>>>>>> parent of 23751f6... (feat) redirect all paths to /
   res.redirect('/');
 });
 
