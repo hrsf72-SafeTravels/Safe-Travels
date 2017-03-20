@@ -68,7 +68,7 @@ app.get('/main', (req, res) => {
   res.redirect('/');
 });
 
-app.get('/login', (req, res) => {
+app.get('/*', (req, res) => {
   res.redirect('/');
 });
 
