@@ -18,13 +18,13 @@ class GoogleMap extends React.Component {
     const mapOptions = {
       zoom: 10,
       center: sanfrancisco,
-    }
+    };
     return new google.maps.Map(this.refs.map, mapOptions);
   }
 
   render() {
     return (<div className="GMap">
-      <h3> hi</h3>
+      <h3>hi</h3>  
       <div ref="mapCanvas" className="GMap-canvas">
       </div>
     </div>);
