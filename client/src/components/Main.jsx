@@ -4,8 +4,7 @@ import Weather from './Weather';
 import Navbar from './Navbar';
 import AttractionList from './AttractionList';
 import RestaurantList from './RestaurantList';
-import dummyYelpAttractionData from './../../../dummyYelpAttractionData';
-import dummyYelpRestaurantData from './../../../dummyYelpRestaurantData';
+import GoogleMap from './GoogleMap';
 
 class Main extends React.Component {
   constructor(props) {
@@ -33,6 +32,7 @@ class Main extends React.Component {
           />
         </div>
         <Weather location={this.props.props.location} />
+        <GoogleMap />
         <footer>
           Be Safe!!
         </footer>
