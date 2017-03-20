@@ -13,10 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(`${__dirname}/../client/dist`));
-app.get('/main', (req, res) => {
-  res.redirect('/');
-});
-app.get('/login', (req, res) => {
+app.get('/*', (req, res) => {
   res.redirect('/');
 });
 app.post('/yelp', (req, res) => {
