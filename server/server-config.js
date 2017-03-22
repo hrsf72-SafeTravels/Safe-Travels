@@ -15,10 +15,8 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
-passport.deserializeUser(function(id, done) {
-  console.log("second time user login info ==========>", id);
+passport.deserializeUser((id, done) => {
   User.findById(id, (err, user) => {
-    console.log('user from session', user);
     done(err, user);
   });
 });
@@ -69,6 +67,10 @@ passport.use(new Strategy({
 //     );
 //   }
 // });
+
+app.get('/waiting', (req, res) => {
+  res.json('waiting');
+});
 
 app.get('/login/facebook',
   passport.authenticate('facebook', { scope: 'email' }));
