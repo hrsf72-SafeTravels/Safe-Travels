@@ -64,9 +64,6 @@ class Main extends React.Component {
             mapDestinations={this.props.mapDestinations}
           />
         </div>
-        <footer>
-          Be Safe!!
-        </footer>
       </div>
     );
   }
