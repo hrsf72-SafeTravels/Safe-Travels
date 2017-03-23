@@ -16,6 +16,7 @@ const Navbar = (props) => (
               <li><span id="noDestination">Please enter your destination</span></li>
             }
             <li onClick={props.getSavedTrips}><Link to="/profile">Profile</Link></li>
+            { props.location ? <li><Link to="/map">Map</Link></li> : null }   
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li><Link to="/">Contact Us</Link></li>
