@@ -11,6 +11,7 @@ const AttractionList = props => (
     <ol>
       {props.attractions.map(value =>
         <AttractionListEntry
+          key={value}
           attraction={value}
           selectDestination={props.selectDestination}
           saveDestination={props.saveDestination}
