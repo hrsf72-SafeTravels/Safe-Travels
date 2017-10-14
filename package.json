@@ -11,7 +11,7 @@
     "start": "node server/server.js",
     "react-dev": "webpack -d --watch",
     "server-dev": "concurrently \"nodemon server/index.js\" \"open http://localhost:8000\"",
-    "postinstall": "npm run react-dev"
+    "postinstall": "npm install --dev && npm run react-dev"
   },
   "dependencies": {
     "axios": "^0.15.3",
