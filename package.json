@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node server/server.js",
-    "react-dev": "webpack -d --watch",
+    "react-dev": "webpack -d --watch --display-error-details",
     "server-dev": "concurrently \"nodemon server/index.js\" \"open http://localhost:8000\"",
     "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
     "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
