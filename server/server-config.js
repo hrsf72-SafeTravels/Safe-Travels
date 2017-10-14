@@ -79,30 +79,28 @@ app.get('/logout', (req, res) => {
 app.get('/crime', (req, res) => {
   const lat = req.query.lat;
   const lon = req.query.lon;
-  // const baseUrl = 'http://api.spotcrime.com/crimes.json';
-  // const key = 'privatekeyforspotcrimepublicusers-commercialuse-877.410.1607';
-  // const loc = { lat, lon };
-  // const radius = 0.1;
-  // const rOpt = {
-  //   url: baseUrl,
-  //   json: true,
-  //   qs: {
-  //     lat: loc.lat,
-  //     lon: loc.lon,
-  //     key,
-  //     radius,
-  //   },
-  // };
-
-  const baseUrl = `http://api.spotcrime.com/crimes.json?lat=${lat}&lon=${lon}&radius=0.1&key=privatekeyforspotcrimepublicusers-commercialuse-877.410.1607`;
+  const baseUrl = 'http://api.spotcrime.com/crimes.json';
+  const key = 'privatekeyforspotcrimepublicusers-commercialuse-877.410.1607';
+  const loc = { lat, lon };
+  const radius = 0.1;
   const rOpt = {
-    url: baseUrl
+    url: baseUrl,
+    json: true,
+    qs: {
+      lat: loc.lat,
+      lon: loc.lon,
+      key,
+      radius,
+    },
   };
-  
+
   request(rOpt, (error, response, body) => {
     if (error || !body) {
       console.error('Spot Crime API GET request error');
     } else {
+      console.log('===========================');
+      console.log(body);
+      console.log('===========================');
       res.status(200).send(body.crimes);
     }
   });
