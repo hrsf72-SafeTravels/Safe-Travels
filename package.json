@@ -16,7 +16,6 @@
     "postinstall": "npm run react-dev"
   },
   "dependencies": {
-    "async": "^2.5.0",
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
@@ -40,6 +39,7 @@
     "request": "^2.83.0"
   },
   "devDependencies": {
+    "async": "^2.5.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
