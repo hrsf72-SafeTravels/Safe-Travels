@@ -102,7 +102,7 @@ class App extends React.Component {
       },
     })
     .then((response) => {
-      console.log('success fetching crime spots from server');
+      console.log('success fetching crime spots from server', response);
       this.setState({ crimeData: response.data });
     })
     .catch((error) => {
