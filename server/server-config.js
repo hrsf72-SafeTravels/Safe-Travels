@@ -9,7 +9,7 @@ const passport = require('passport');
 const Strategy = require('passport-facebook').Strategy;
 const cookie = require('cookie-parser');
 const session = require('express-session');
-const spotcrime = require('spotcrime');
+const spotcrime = require('spotcrime')
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -79,13 +79,31 @@ app.get('/logout', (req, res) => {
 app.get('/crime', (req, res) => {
   const lat = req.query.lat;
   const lon = req.query.lon;
-  const loc = { lat, lon };
-  const radius = 0.1;
-  spotcrime.getCrimes(loc, radius, function(err, crimes){
-    if (err) {
+  // const baseUrl = 'http://api.spotcrime.com/crimes.json';
+  // const key = 'privatekeyforspotcrimepublicusers-commercialuse-877.410.1607';
+  // const loc = { lat, lon };
+  // const radius = 0.1;
+  // const rOpt = {
+  //   url: baseUrl,
+  //   json: true,
+  //   qs: {
+  //     lat: loc.lat,
+  //     lon: loc.lon,
+  //     key,
+  //     radius,
+  //   },
+  // };
+
+  const baseUrl = `http://api.spotcrime.com/crimes.json?lat=${lat}&lon=${lon}&radius=0.1&key=privatekeyforspotcrimepublicusers-commercialuse-877.410.1607`;
+  const rOpt = {
+    url: baseUrl
+  };
+  
+  request(rOpt, (error, response, body) => {
+    if (error || !body) {
       console.error('Spot Crime API GET request error');
     } else {
-      res.status(200).send(crimes);
+      res.status(200).send(body.crimes);
     }
   });
 });
