@@ -9,6 +9,8 @@ const propTypes = {
   saveDestination: PropTypes.func.isRequired,
 };
 
+const counter = { current: 0 };
+
 const RestaurantList = props => (
   <div className="yelp-results-restaurants">
     <select
@@ -45,7 +47,7 @@ const RestaurantList = props => (
     <ol>
       {props.restaurants.map(value =>
         <RestaurantListEntry
-          key={value}
+          key={counter.current++}
           restaurant={value}
           selectDestination={props.selectDestination}
           saveDestination={props.saveDestination}
