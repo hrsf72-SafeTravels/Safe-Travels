@@ -9,6 +9,7 @@ const passport = require('passport');
 const Strategy = require('passport-facebook').Strategy;
 const cookie = require('cookie-parser');
 const session = require('express-session');
+const spotcrime = require('spotcrime')
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -82,7 +83,6 @@ app.get('/crime', (req, res) => {
   const key = 'privatekeyforspotcrimepublicusers-commercialuse-877.410.1607';
   const loc = { lat, lon };
   const radius = 0.1;
-
   const rOpt = {
     url: baseUrl,
     json: true,
@@ -98,6 +98,9 @@ app.get('/crime', (req, res) => {
     if (error || !body) {
       console.error('Spot Crime API GET request error');
     } else {
+      console.log('===========================');
+      console.log(body);
+      console.log('===========================');
       res.status(200).send(body.crimes);
     }
   });

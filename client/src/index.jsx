@@ -95,6 +95,7 @@ class App extends React.Component {
   }
 
   queryCrime(geoLocation) {
+    console.log('this is the location: ', geoLocation.lat(), geoLocation.lng());
     return Axios.get('/crime', {
       params: {
         lat: geoLocation.lat(),
@@ -102,7 +103,7 @@ class App extends React.Component {
       },
     })
     .then((response) => {
-      console.log('success fetching crime spots from server');
+      console.log('success fetching crime spots from server', response);
       this.setState({ crimeData: response.data });
     })
     .catch((error) => {
@@ -212,5 +213,6 @@ class App extends React.Component {
     );
   }
 }
+
 
 ReactDOM.render(<App />, document.getElementById('app'));
